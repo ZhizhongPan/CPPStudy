@@ -1,10 +1,8 @@
 #include "scorer.h"
 
 Scorer* Scorer::getInstance(){
-	if ( !instance ) {
-		instance = new Scorer();
-	}
-  	return instance;
+	static Scorer instance;
+  	return &instance;
 }
 
 int Scorer::getScore() const{
